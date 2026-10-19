@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Studio</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="app">
+  <header>
+    <div>
+      <h1>Pixel Studio</h1>
+      <p>A grid from 16 to 64 pixels. Draw something small.</p>
+    </div>
+    <div class="actions">
+      <button id="undoBtn" type="button">Undo</button>
+      <button id="clearBtn" type="button">Clear</button>
+      <button id="downloadBtn" class="primary" type="button">Download PNG</button>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <div class="canvas-wrap">
+      <canvas id="canvas" width="512" height="512" aria-label="Pixel drawing canvas"></canvas>
+    </div>
+
+    <aside class="palette">
+      <div class="size-row">
+        <label for="sizeSelect">Grid</label>
+        <select id="sizeSelect">
+          <option value="16" selected>16 × 16</option>
+          <option value="24">24 × 24</option>
+          <option value="25">25 × 25</option>
+          <option value="32">32 × 32</option>
+          <option value="48">48 × 48</option>
+          <option value="64">64 × 64</option>
+        </select>
+      </div>
+
+      <p class="label">Colour</p>
+      <div class="swatches" id="swatches"></div>
+
+      <button id="eraserBtn" class="eraser" type="button">Eraser</button>
+
+      <div class="current">
+        <span id="currentSwatch"></span>
+        <p id="currentLabel">#ef4444</p>
+      </div>
+
+      <p class="tip">Click and drag to paint. Changing the grid clears the canvas.</p>
+    </aside>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
